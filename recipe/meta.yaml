@@ -1,5 +1,5 @@
 {% set name = "asttrs" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/asttrs-{{ version }}.tar.gz
-  sha256: dbe74c79ecc6d57515ba5f776371bc44bd9c3937cadd850a3f3c1b059e08df6a
+  sha256: 5499b7166020fccf606b4a7ab46c3b2298aa1d3e07b046e2c3b0bf94c51e16ed
 
 build:
   noarch: python
