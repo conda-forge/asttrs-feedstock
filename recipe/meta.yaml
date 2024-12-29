@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/asttrs-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/asttrs-{{ version }}.tar.gz
   sha256: 39f3cd8bbecdeecff6c851d9cdb59e600a22611967cb2a0e1c5988d01a23233d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7,<3.11
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.7,<3.11
+    - python >={{ python_min }},<3.11
     - attrs
     - black
     - cattrs
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ryanchao2012/asttrs
