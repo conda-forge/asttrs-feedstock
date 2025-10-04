@@ -37,13 +37,6 @@ tests:
         - asttrs
       pip_check: true
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
-
 about:
   summary: A attrs-style wrapper for python ast
   license: MIT
